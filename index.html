@@ -9,6 +9,7 @@
   <style>
     @import url("https://fontsapi.zeoseven.com/285/main/result.css");
     @import url("https://fontsapi.zeoseven.com/256/main/result.css");
+    @import url("https://fontsapi.zeoseven.com/69/main/result.css");
 
     /* ========== 设计令牌 ========== */
     :root {
@@ -125,7 +126,7 @@
     }
 
     body {
-      font-family: "Noto Serif CJK", serif;
+      font-family: "Noto Sans CJK", sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.5;
@@ -144,9 +145,11 @@
       font-weight: 700;
       text-align: center;
       margin-bottom: 4px;
+      font-family: "Noto Serif CJK", serif;
     }
 
     .version {
+      font-family: "Noto Sans CJK", sans-serif;
       text-align: center;
       font-size: 13px;
       color: var(--text-tertiary);
@@ -188,6 +191,7 @@
     }
 
     .legend-label {
+      font-family: "Noto Serif CJK", serif;
       font-size: 9px;
       font-weight: 600;
       color: var(--text-tertiary);
@@ -328,6 +332,7 @@
     }
 
     .section-header h2 {
+      font-family: "Huiwen-mincho", serif;
       font-size: 18px;
       font-weight: 700;
     }
@@ -383,6 +388,7 @@
       background: var(--hover-bg);
       font-weight: 600;
       font-size: 10.5px;
+      font-family: "Noto Serif CJK", serif;
       text-transform: uppercase;
       letter-spacing: .5px;
       color: var(--text-secondary);
@@ -416,7 +422,7 @@
       color: var(--text-tertiary);
     }
 
-    .col-scene {
+    tbody .col-scene {
       font-family: "Huiwen-mincho", serif;
       font-weight: 600;
       white-space: nowrap;
@@ -501,6 +507,7 @@
     /* ========== 进阶技法徽章 ========== */
     .bkt {
       display: inline-block;
+      font-family: "Noto Sans CJK", sans-serif;
       font-size: var(--font-size-tag);
       font-weight: 700;
       padding: 1px 3px;
@@ -636,6 +643,7 @@
     }
 
     .param {
+      font-family: "Noto Sans CJK", sans-serif;
       font-size: var(--font-size-note);
       color: var(--param-text);
       font-weight: 600;
@@ -653,6 +661,7 @@
     /* ========== 技巧子行 ========== */
     .tip-row td {
       padding: 4px 12px 12px;
+      font-family: "Noto Serif CJK", serif;
       font-size: 11.5px;
       color: var(--text-secondary);
       background: var(--card-bg);
@@ -731,7 +740,7 @@
       }
 
       /* 场景列 sticky 固定 */
-      .col-scene,
+      tbody .col-scene,
       thead th:first-child {
         position: sticky;
         left: 0;
@@ -854,7 +863,7 @@
       }
 
       /* 场景首列 sticky */
-      .col-scene,
+      tbody .col-scene,
       thead th:first-child {
         position: sticky;
         left: 0;
@@ -962,7 +971,7 @@
   <div class="container">
     <h1>摄影速查表
     </h1>
-    <div class="version">V0.8</div>
+    <div class="version">V0.9</div>
     <!-- ========== 导航 ========== -->
     <nav class="toc">
       <div class="toc-links"> <a href="#portrait">人像</a> <a href="#landscape">风光</a> <a href="#lowlight">弱光夜景</a> <a
@@ -988,6 +997,9 @@
         </div>
         <div class="legend-group"> <span class="legend-label">包围</span> <span class="bkt aeb-must">必须</span> <span
             class="bkt aeb-strong">强推</span> <span class="bkt aeb-rec">推荐</span>
+        </div>
+        <div class="legend-group"> <span class="legend-label">进阶</span> <span class="bkt aeb-opt">推荐滤镜</span> <span
+            class="bkt ps">像素偏移</span> <span class="bkt fb-opt">景深包围</span>
         </div>
       </div>
     </nav>
