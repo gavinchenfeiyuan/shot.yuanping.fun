@@ -55,6 +55,14 @@
       --wb-auto: #6E5A82;
       --param-bg: #EAF0F5;
       --param-text: #3C5A8A;
+      --meter-bg: #E6F0F5;
+      --meter-text: #3A6080;
+      --meter-border-light: #B8D4E8;
+      --meter-border-mid: #7AB0D0;
+      --meter-border-strong: #4A8AB8;
+      --meter-border-extra: #2A6AA0;
+      --inline-tip-color: #C3272B;
+      --wb-capsule-text: #fff;
       --radius: 10px;
       --font-size-base: 12.5px;
       --font-size-legend: 11.5px;
@@ -108,6 +116,14 @@
         --wb-auto: #B8A0D0;
         --param-bg: #152438;
         --param-text: #8BAED4;
+        --meter-bg: #1A2832;
+        --meter-text: #8BAED4;
+        --meter-border-light: #4A6A80;
+        --meter-border-mid: #5A8AA8;
+        --meter-border-strong: #6AA0C0;
+        --meter-border-extra: #7AB0D0;
+        --inline-tip-color: #F09898;
+        --wb-capsule-text: #1c1917;
         --nav-bg: rgba(41, 37, 36, .92);
       }
     }
@@ -296,7 +312,7 @@
 
     .toc a {
       flex-shrink: 0;
-      font-family: "Huiwen-mincho", serif;
+      font-family: "Huiwen-mincho", "Noto Serif CJK", serif;
       font-size: 14px;
       font-weight: 500;
       color: var(--text-secondary);
@@ -332,7 +348,7 @@
     }
 
     .section-header h2 {
-      font-family: "Huiwen-mincho", serif;
+      font-family: "Huiwen-mincho", "Noto Serif CJK", serif;
       font-size: 18px;
       font-weight: 700;
     }
@@ -423,7 +439,7 @@
     }
 
     tbody .col-scene {
-      font-family: "Huiwen-mincho", serif;
+      font-family: "Huiwen-mincho", "Noto Serif CJK", serif;
       font-weight: 600;
       white-space: nowrap;
     }
@@ -475,27 +491,27 @@
     }
 
     .meter.multi {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #B8D4E8;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-light);
     }
 
     .meter.center {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #7AB0D0;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-mid);
     }
 
     .meter.spot {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #4A8AB8;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-strong);
     }
 
     .meter.highlight {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #2A6AA0;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-extra);
     }
 
     .tag.neutral {
@@ -609,7 +625,7 @@
       font-weight: 600;
       padding: 1px 3px;
       border-radius: 100px;
-      color: #fff;
+      color: var(--wb-capsule-text);
     }
 
     .wb-capsule.warm {
@@ -630,7 +646,7 @@
 
     .inline-tip {
       font-size: var(--font-size-note);
-      color: #C3272B;
+      color: var(--inline-tip-color);
       font-weight: 500;
       display: inline;
     }
@@ -779,6 +795,7 @@
       }
 
       .legend-divider {
+        display: inline;
         color: var(--border-light);
         margin: 0 1px;
       }
@@ -860,23 +877,6 @@
       .tip-row .gear-note {
         display: inline;
         font-size: 9.5px;
-      }
-
-      /* 场景首列 sticky */
-      tbody .col-scene,
-      thead th:first-child {
-        position: sticky;
-        left: 0;
-        z-index: 11;
-        background: var(--card-bg);
-      }
-
-      thead th:first-child {
-        background: var(--hover-bg);
-      }
-
-      tbody .col-scene {
-        box-shadow: 2px 0 4px -2px rgba(0, 0, 0, .08);
       }
 
       /* 微调 */
@@ -964,14 +964,40 @@
         font-size: 9.5px;
       }
     }
+
+    /* ========== 页脚备案 ========== */
+    .footer-beian {
+      text-align: center;
+      padding: 32px 0 24px;
+      font-family: "Huiwen-mincho", "Noto Serif CJK", serif;
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    .footer-beian a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-beian a:hover {
+      color: var(--text-secondary);
+    }
+
+    .footer-beian .beian-logo {
+      display: inline-block;
+      vertical-align: -3px;
+      height: 15px;
+      margin-right: 4px;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>摄影速查表
-    </h1>
-    <div class="version">V0.9</div>
+    <h1>摄影速查表</h1>
+    <div class="version">V1.0</div>
     <!-- ========== 导航 ========== -->
     <nav class="toc">
       <div class="toc-links"> <a href="#portrait">人像</a> <a href="#landscape">风光</a> <a href="#lowlight">弱光夜景</a> <a
@@ -979,7 +1005,7 @@
       </div>
       <div class="legend">
         <div class="legend-group"> <span class="legend-label">曝光</span> <span class="tag ettr">ETTR</span> <span
-            class="tag ettl">ETTL</span>
+            class="tag ettl">ETTL</span> <span class="tag neutral">中性</span>
         </div>
         <div class="legend-group"> <span class="legend-label">测光</span>
           <div><span class="meter multi">多重</span> <span class="meter center">中心</span>
@@ -1033,16 +1059,28 @@
                   优先；RAW 后期微调肤色</span></td>
             </tr>
             <tr>
-              <td class="col-scene">逆光人像<br>剪影<br><span class="bkt aeb-strong">曝光包围</span> <span
-                  class="param">±1EVx3</span></td>
-              <td class="col-ev"><span class="ev-minus">-0.7~-1.3</span> <span class="tag ettl">ETTL</span><br><span
-                  class="meter spot">点测光</span></td>
+              <td class="col-scene">逆光人像<br><span class="scene-sub">补光优先</span><br><span class="bkt aeb-rec">曝光包围</span>
+                <span class="param">±1EVx3</span></td>
+              <td class="col-ev"><span class="ev-plus">+0.3~+0.7</span> <span class="tag ettr">ETTR</span><br><span
+                  class="meter spot">点测光</span><br><span class="note-inline">人脸优先</span></td>
               <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1/250 -
-                  1/1000s</span><br><span class="val">f/2.8 - 8</span><br><span class="wb-warm">3500-5000K</span></td>
+                  1/1000s</span><br><span class="val">f/2.8 - 5.6</span><br><span class="wb-warm">4000-5000K</span></td>
             </tr>
             <tr class="tip-row">
-              <td colspan="3">主体与背景光比极大。<span class="inline-tip">⚠ 死白或全黑</span> <span class="gear-note"> · RAW 阴影可拉 3-4
-                  档；剪影先对天空测光锁定再构图</span></td>
+              <td colspan="3">以人脸为准曝光，明亮通透。<span class="inline-tip">⚠ 天空过曝可接受</span> <span class="gear-note"> ·
+                  反光板/闪光灯补光平衡光比；RAW 阴影可拉 2-3 档</span></td>
+            </tr>
+            <tr>
+              <td class="col-scene">剪影<br><span class="scene-sub">完全逆光</span><br><span class="bkt aeb-rec">曝光包围</span>
+                <span class="param">±1EVx3</span></td>
+              <td class="col-ev"><span class="ev-minus">-1.3~-2.3</span> <span class="tag ettl">ETTL</span><br><span
+                  class="meter spot">点测光</span><br><span class="note-inline">天空优先</span></td>
+              <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1/250 -
+                  1/1000s</span><br><span class="val">f/5.6 - 11</span><br><span class="wb-warm">4000-5000K</span></td>
+            </tr>
+            <tr class="tip-row">
+              <td colspan="3">天空测光锁定后构图。<span class="inline-tip">⚠ 主体须有清晰轮廓</span> <span class="gear-note"> ·
+                  干净背景凸显形状；低角度仰拍天空留白</span></td>
             </tr>
             <tr>
               <td class="col-scene">室内窗边人像<br><span class="scene-sub">单侧光</span><br><span
@@ -1054,8 +1092,8 @@
                   class="wb-cool">5000-6500K</span></td>
             </tr>
             <tr class="tip-row">
-              <td colspan="3">窗内外光比常超宽容度。<span class="inline-tip">⚠ 窗外细节全丢</span> <span class="gear-note"> · 机身防抖手持
-                  1/8s；窗帘柔光降光比；AI 降噪处理暗部</span></td>
+              <td colspan="3">窗内外光比常超宽容度。<span class="inline-tip">⚠ 窗外细节全丢</span> <span class="gear-note"> · 人脸优先→ETTR
+                  +0.3~+0.7(窗外过曝可接受)；窗外优先→ETTL -0.3~-0.7；机身防抖手持 1/8s；窗帘柔光降光比；AI 降噪处理暗部</span></td>
             </tr>
             <tr>
               <td class="col-scene">白纱<br>白色礼服<br><span class="bkt aeb-strong">曝光包围</span> <span
@@ -1133,11 +1171,11 @@
               <td class="col-ev"><span class="ev-minus">-0.7~-1.3</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
               <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1/30 -
-                  1/125s</span><br><span class="val">f/5.6 - 11</span><br><span class="wb-warm">3000-4500K</span></td>
+                  1/125s</span><br><span class="val">f/5.6 - 11</span><br><span class="wb-warm">4000-5000K</span></td>
             </tr>
             <tr class="tip-row">
-              <td colspan="3">天地光比常超 6 档。<span class="inline-tip">⚠ 太阳死白、暖色丢</span> <span class="gear-note"> · 日光 WB
-                  会洗掉暖色；像素偏移 HDR 需脚架</span></td>
+              <td colspan="3">天地光比常超 6 档。<span class="inline-tip">⚠ 太阳死白、暖色丢</span> <span class="gear-note"> · 黄金时刻约
+                  30-60 分窗口；日光 WB 会洗掉暖色；像素偏移 HDR 需脚架</span></td>
             </tr>
             <tr>
               <td class="col-scene">雾景<br><span class="scene-sub">阴天柔和光</span></td>
@@ -1156,7 +1194,8 @@
               <td class="col-ev"><span class="ev-plus">+0.7~+2.0</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter highlight">强光测光</span></td>
               <td class="col-exposure"><span class="val">100 - 200</span><br><span class="val">1/250 -
-                  1/500s</span><br><span class="val">f/5.6 - 11</span><br><span class="wb-warm">5500-7000K</span></td>
+                  1/500s</span><br><span class="val">f/5.6 - 11</span><br><span class="wb-neutral">5200-6000K</span>
+              </td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">大面积白色欺骗测光。<span class="inline-tip">⚠ 白雪变灰</span> <span class="gear-note"> ·
@@ -1179,8 +1218,8 @@
               <td class="col-ev"><span class="ev-minus">-0.3~-1.0</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
               <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1 - 30s</span> <span
-                  class="note-inline">脚架</span><br><span class="val">f/5.6 - 8</span><br><span class="wb-warm">2800 -
-                  4000K</span></td>
+                  class="note-inline">脚架</span><br><span class="val">f/5.6 - 8</span><br><span class="wb-warm">3800 -
+                  5000K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">灯光与暗部光比极大。<span class="inline-tip">⚠ 灯箱过曝白斑</span> <span class="gear-note"> · 长曝降噪
@@ -1192,7 +1231,7 @@
               <td class="col-ev"><span class="ev-minus">-0.3~-1.0</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter center">中心测光</span></td>
               <td class="col-exposure"><span class="val">100 - 800</span><br><span class="val">1/60 -
-                  1/125s</span><br><span class="val">f/5.6 - 8</span><br><span class="wb-warm">4.8 - 6000K</span></td>
+                  1/125s</span><br><span class="val">f/5.6 - 8</span><br><span class="wb-warm">4800 - 6000K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">大面积暗色误导测光。<span class="inline-tip">⚠ 暗部死黑</span> <span class="gear-note"> · RAW 暗部可提 2-3
@@ -1204,7 +1243,7 @@
               <td class="col-ev"><span class="ev-minus">-0.3~-0.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter multi">多重测光</span></td>
               <td class="col-exposure"><span class="val">100 - 800</span><br><span class="val">1/60 -
-                  1/125s</span><br><span class="val">f/4 - 8</span><br><span class="wb-cool">5500-7000K</span></td>
+                  1/125s</span><br><span class="val">f/4 - 8</span><br><span class="wb-neutral">5000-5800K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">大面积暗色误导测光。<span class="inline-tip">⚠ 暗部死黑</span> <span class="gear-note"> · RAW 暗部可提 2-3
@@ -1253,13 +1292,16 @@
             </tr>
           </thead>
           <tbody>
+            <tr class="tip-row">
+              <td colspan="3"><span class="gear-note">⚡ 弱光通则：最大光圈优先；ISO 视机身高感浮动 ±1 档；脚架替代包围</span></td>
+            </tr>
             <tr>
               <td class="col-scene">星空/银河<br><span class="bkt aeb-rec">曝光包围</span></td>
               <td class="col-ev"><span class="ev-plus">+0.7~+1.7</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter multi">多重测光</span></td>
-              <td class="col-exposure"><span class="val">3.2 - 6400</span><br><span class="val">≤10s <span
+              <td class="col-exposure"><span class="val">3200 - 6400</span><br><span class="val">≤10s <span
                     class="note-inline">500法则</span></span><br><span class="val">f/2.8</span> <span
-                  class="note-inline">广角端</span><br><span class="wb-warm">3.5 - 4500K</span></td>
+                  class="note-inline">广角端</span><br><span class="wb-warm">3800 - 4500K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">天光极暗 + 地景光比大。<span class="inline-tip">⚠ 地景全黑或溢出</span> <span class="gear-note"> ·
@@ -1271,7 +1313,7 @@
                   class="meter multi">多重测光</span></td>
               <td class="col-exposure"><span class="val">400 - 1600</span><br><span class="val">30s×200张 <span
                     class="note-inline">堆栈</span></span><br><span class="val">f/2.8 - 5.6</span><br><span
-                  class="wb-warm">3.5 - 4500K</span></td>
+                  class="wb-warm">3500 - 4500K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">长曝热噪累积多。<span class="inline-tip">⚠ 噪点毁片</span> <span class="gear-note"> ·
@@ -1281,9 +1323,9 @@
               <td class="col-scene">极光</td>
               <td class="col-ev"><span class="ev-plus">+0.7~+1.3</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter multi">多重测光</span></td>
-              <td class="col-exposure"><span class="val">1.6 - 6400</span><br><span class="val">5 - 15s</span><br><span
-                  class="val">f/2.8</span> <span class="note-inline">广角端</span><br><span class="wb-warm">3500 -
-                  4500K</span></td>
+              <td class="col-exposure"><span class="val">1600 - 6400</span><br><span class="val">5 - 15s</span><br><span
+                  class="val">f/2.8</span> <span class="note-inline">广角端</span><br><span class="wb-warm">4000 -
+                  5000K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">形态快包围易错位。<span class="inline-tip">⚠ 极光黯淡或前景黑</span> <span class="gear-note"> ·
@@ -1294,8 +1336,8 @@
               </td>
               <td class="col-ev"><span class="ev-minus">-0.3~-0.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
-              <td class="col-exposure"><span class="val">1.6 - 6400</span><br><span class="val">1/15 -
-                  1/30s</span><br><span class="val">f/2.8 - 5.6</span><br><span class="wb-warm">2.5 - 3500K</span></td>
+              <td class="col-exposure"><span class="val">1600 - 6400</span><br><span class="val">1/15 -
+                  1/30s</span><br><span class="val">f/2.8 - 5.6</span><br><span class="wb-warm">2500 - 3500K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">火焰极亮环境极暗。<span class="inline-tip">⚠ 火焰白斑或死黑</span> <span class="gear-note"> · 机身防抖广角端手持
@@ -1308,7 +1350,7 @@
                   class="meter multi">多重测光</span></td>
               <td class="col-exposure"><span class="val">100 - 200</span><br><span class="val">2 - 8s <span
                     class="note-inline">B门</span></span><br><span class="val">f/8 - 16</span><br><span
-                  class="wb-warm">3.5 - 4500K</span></td>
+                  class="wb-warm">3500 - 4500K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">瞬间亮度极高。<span class="inline-tip">⚠ 轨迹变白线</span> <span class="gear-note"> · 脚架 + B
@@ -1318,7 +1360,7 @@
               <td class="col-scene">室内弱光<br><span class="scene-sub">餐厅/酒吧</span></td>
               <td class="col-ev"><span class="ev-plus">+0.3~+0.7</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter multi">多重测光</span></td>
-              <td class="col-exposure"><span class="val">1.6 - 6400</span><br><span class="val">1/15 -
+              <td class="col-exposure"><span class="val">1600 - 6400</span><br><span class="val">1/15 -
                   1/60s</span><br><span class="val">f/2.8 - 5.6</span><br><span class="wb-auto">自动 WB</span></td>
             </tr>
             <tr class="tip-row">
@@ -1330,7 +1372,7 @@
               <td class="col-ev"><span class="ev-minus">-0.7~-1.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter multi">多重测光</span></td>
               <td class="col-exposure"><span class="val">100 - 200</span><br><span class="val">5 - 30s</span><br><span
-                  class="val">f/8 - 16</span><br><span class="wb-auto">手动</span></td>
+                  class="val">f/8 - 16</span><br><span class="wb-warm">手动</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">光源可控手动曝光。<span class="inline-tip">⚠ 光迹变粗白条</span> <span class="gear-note"> · M 档 +
@@ -1401,6 +1443,8 @@
                   class="bkt aeb-rec">曝光包围</span><br><span class="bkt aeb-opt">CPL</span></td>
               <td class="col-ev"><span class="ev-minus">-0.3~-0.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter multi">多重测光</span></td>
+              <td class="col-exposure"><span class="val">100 - 200</span><br><span class="val">1/125 -
+                  1/250s</span><br><span class="val">f/8 - 11</span><br><span class="wb-neutral">5000-5500K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">边缘高光 + 透射光双险。<span class="inline-tip">⚠ 边缘消失</span> <span class="gear-note"> ·
@@ -1411,7 +1455,7 @@
               <td class="col-ev"><span class="ev-plus">+0.3~+0.7</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter center">中心测光</span></td>
               <td class="col-exposure"><span class="val">200 - 800</span><br><span class="val">1/60 -
-                  1/125s</span><br><span class="val">f/4 - 5.6</span><br><span class="wb-warm">3500-5000K</span></td>
+                  1/125s</span><br><span class="val">f/4 - 5.6</span><br><span class="wb-warm">4200-5200K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">明亮暖调更诱人。<span class="inline-tip">⚠ 沉闷无食欲</span> <span class="gear-note"> · 广角端 ~19cm
@@ -1424,7 +1468,7 @@
               <td class="col-ev"><span class="ev-minus">-0.3~-0.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
               <td class="col-exposure"><span class="val">200 - 800</span><br><span class="val">1/60 -
-                  1/125s</span><br><span class="val">f/4 - 5.6</span><br><span class="wb-warm">3.2 - 4500K</span></td>
+                  1/125s</span><br><span class="val">f/4 - 5.6</span><br><span class="wb-warm">4000 - 5000K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">杯沿高光 + 液面反光。<span class="inline-tip">⚠ 杯沿消失</span> <span class="gear-note"> · 50-100mm
@@ -1455,7 +1499,7 @@
               <td class="col-scene">舞台演出<br><span class="scene-sub">聚光灯下</span></td>
               <td class="col-ev"><span class="ev-minus">-0.7~-1.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
-              <td class="col-exposure"><span class="val">1.6 - 6400</span><br><span class="val">≥1/250s</span><br><span
+              <td class="col-exposure"><span class="val">1600 - 6400</span><br><span class="val">≥1/250s</span><br><span
                   class="val">f/5 - 5.6</span> <span class="note-inline">长焦端</span><br><span class="wb-auto">自动
                   WB</span></td>
             </tr>
@@ -1467,7 +1511,7 @@
               <td class="col-scene">舞台演出<br><span class="scene-sub">均匀布光</span></td>
               <td class="col-ev"><span class="ev-minus">-0.3~-0.7</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter center">中心测光</span></td>
-              <td class="col-exposure"><span class="val">1.6 - 6400</span><br><span class="val">≥1/250s</span><br><span
+              <td class="col-exposure"><span class="val">1600 - 6400</span><br><span class="val">≥1/250s</span><br><span
                   class="val">f/5 - 5.6</span><br><span class="wb-auto">自动 WB</span></td>
             </tr>
             <tr class="tip-row">
@@ -1489,7 +1533,7 @@
               <td class="col-scene">室内体育<br><span class="scene-sub">体育馆灯光</span></td>
               <td class="col-ev"><span class="ev-plus">+0.3~+0.7</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter multi">多重测光</span></td>
-              <td class="col-exposure"><span class="val">3.2 - 6400</span><br><span class="val">≥1/500s</span><br><span
+              <td class="col-exposure"><span class="val">3200 - 6400</span><br><span class="val">≥1/500s</span><br><span
                   class="val">f/5.6</span> <span class="note-inline">长焦端全开</span><br><span class="wb-auto">自动 WB</span>
               </td>
             </tr>
@@ -1502,7 +1546,7 @@
                   class="param">±1EVx3</span></td>
               <td class="col-ev"><span class="ev-minus">-0.7~-1.3</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
-              <td class="col-exposure"><span class="val">1.6 - 6400</span><br><span class="val">≥1/250s</span><br><span
+              <td class="col-exposure"><span class="val">1600 - 6400</span><br><span class="val">≥1/250s</span><br><span
                   class="val">f/5 - 5.6</span><br><span class="wb-auto">自动 WB</span></td>
             </tr>
             <tr class="tip-row">
@@ -1547,7 +1591,7 @@
               <td class="col-ev"><span class="ev-minus">-0.7~-2.0</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span></td>
               <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1/125 -
-                  1/250s</span><br><span class="val">f/8</span><br><span class="wb-cool">4 - 5000K</span></td>
+                  1/250s</span><br><span class="val">f/8</span><br><span class="wb-neutral">5200-5600K</span></td>
             </tr>
             <tr class="tip-row">
               <td colspan="3">Looney 11 法则。<span class="inline-tip">⚠ 月亮变白盘</span> <span class="gear-note"> · 高像素裁切等效
@@ -1716,14 +1760,25 @@
                   class="val">f/5.6 - 8</span><br><span class="wb-auto">固定 WB 必须</span></td>
             </tr>
             <tr class="tip-row">
-              <td colspan="3">光线跨度极大。<span class="inline-tip">⚠ 色温闪烁</span> <span class="gear-note"> · 内置间隔自动生成；A 档 + 固定
-                  WB；LRTimelapse 去闪烁</span></td>
+              <td colspan="3">光线跨度极大。<span class="inline-tip">⚠ 色温闪烁</span> <span class="gear-note"> · 内置间隔自动生成；M 档+Auto
+                  ISO + 固定 WB<span class="inline-tip">⚠ A 档可能光圈闪烁</span>；LRTimelapse 去闪烁</span></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+  <footer class="footer-beian">
+    <div>
+      <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2026011298号-1</a>
+    </div>
+    <div>
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=31011202022334" rel="noreferrer" target="_blank">
+        <img class="beian-logo" src="./RegisteredLogo.png" alt="" width="15" height="15" loading="lazy">
+        沪公网安备 31011202022334 号
+      </a>
+    </div>
+  </footer>
 </body>
 
 </html>
