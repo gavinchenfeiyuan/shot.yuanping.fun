@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="摄影速查表 — 涵盖人像、风光、弱光夜景、产品静物、运动舞台、特殊题材、视频拍摄七大场景的 EV 偏向、包围曝光、ISO/光圈/白平衡参数与实操技巧">
+  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)">
   <title>摄影速查表</title>
-  <link href="https://fontsapi.zeoseven.com/256/main/result.css" onload="this.rel='stylesheet'" rel="preload" as="style"
-    crossorigin> <noscript>
+  <link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin>
+  <link href="https://fontsapi.zeoseven.com/256/main/result.css" onload="this.onload=null;this.rel='stylesheet'"
+    rel="preload" as="style" crossorigin>
+  <noscript>
     <link rel="stylesheet" href="https://fontsapi.zeoseven.com/256/main/result.css">
   </noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +63,13 @@
       --wb-auto: #6E5A82;
       --param-bg: #EAF0F5;
       --param-text: #3C5A8A;
+      --meter-bg: #E6F0F5;
+      --meter-text: #3A6080;
+      --meter-border-multi: #B8D4E8;
+      --meter-border-center: #7AB0D0;
+      --meter-border-spot: #4A8AB8;
+      --meter-border-highlight: #2A6AA0;
+      --inline-tip: #C3272B;
       --radius: 10px;
       --font-size-base: 12.5px;
       --font-size-legend: 11.5px;
@@ -112,6 +123,13 @@
         --wb-auto: #B8A0D0;
         --param-bg: #152438;
         --param-text: #8BAED4;
+        --meter-bg: #152438;
+        --meter-text: #8BAED4;
+        --meter-border-multi: #2A4A60;
+        --meter-border-center: #3A6A90;
+        --meter-border-spot: #4A8AB8;
+        --meter-border-highlight: #6AAAD8;
+        --inline-tip: #E89494;
         --nav-bg: rgba(41, 37, 36, .92);
       }
     }
@@ -374,9 +392,15 @@
     }
 
     caption {
-      font-size: 0;
-      height: 0;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
       overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     thead th {
@@ -477,27 +501,27 @@
     }
 
     .meter.multi {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #B8D4E8;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-multi);
     }
 
     .meter.center {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #7AB0D0;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-center);
     }
 
     .meter.spot {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #4A8AB8;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-spot);
     }
 
     .meter.highlight {
-      background: #E6F0F5;
-      color: #3A6080;
-      border: 1px solid #2A6AA0;
+      background: var(--meter-bg);
+      color: var(--meter-text);
+      border: 1px solid var(--meter-border-highlight);
     }
 
     .tag.neutral {
@@ -635,7 +659,7 @@
 
     .inline-tip {
       font-size: var(--font-size-note);
-      color: #C3272B;
+      color: var(--inline-tip);
       font-weight: 500;
       display: inline;
     }
@@ -926,6 +950,8 @@
         color: #000;
         padding: 0;
         font-size: 11px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
       .toc {
