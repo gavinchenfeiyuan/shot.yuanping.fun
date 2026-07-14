@@ -8,7 +8,7 @@
   <meta property="og:image" content="https://shot.yuanping.fun/cat.webp" />
   <meta property="og:url" content="https://shot.yuanping.fun" />
   <meta property="og:type" content="website" />
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="摄影速查表 — 涵盖人像、风光、弱光夜景、产品静物、运动舞台、特殊题材、视频拍摄七大场景的 EV 偏向、包围曝光、ISO/光圈/白平衡参数与实操技巧">
@@ -392,6 +392,526 @@
       background: var(--neutral-bg);
       color: var(--neutral-tag);
       border: 1px solid var(--neutral-border);
+    }
+
+    /* ========== 武器卡片 ========== */
+    .weapon-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .weapon-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 24px;
+    }
+
+    .weapon-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .weapon-card-header h3 {
+      font-family: "Huiwen-mincho", "汇文明朝体", "Noto Serif SC", serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .weapon-card-formula {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: var(--font-size-base);
+      color: var(--text-tertiary);
+      margin-left: auto;
+      margin-right: 12px;
+    }
+
+    .weapon-card-tag {
+      font-size: .75rem;
+      color: var(--text-tertiary);
+      background: var(--hover-bg);
+      padding: 2px 10px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    .weapon-card-desc {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* 公式 */
+    .weapon-formula {
+      margin-top: 16px;
+      padding: 10px 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .weapon-formula-row {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .weapon-formula-text {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+    }
+
+    .weapon-formula-label {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+    }
+
+    .weapon-formula-label-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.4;
+    }
+
+    .weapon-formula-sub {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    .weapon-brace-wrap {
+      margin-top: 8px;
+    }
+
+    .weapon-brace {
+      display: flex;
+      gap: 0;
+    }
+
+    .brace-left {
+      width: 12px;
+      flex-shrink: 0;
+      border-left: 2px solid var(--text-secondary);
+      border-top: 2px solid var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+      border-radius: 8px 0 0 8px;
+      margin-right: 10px;
+      min-height: 54px;
+    }
+
+    .brace-right {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brace-line {
+      font-family: "Noto Serif SC", serif;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    .brace-line strong {
+      color: var(--text);
+      font-family: "Noto Sans CJK SC", sans-serif;
+    }
+
+    .weapon-frac {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: stretch;
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+    }
+
+    .weapon-frac-num {
+      padding-bottom: 2px;
+      text-align: center;
+    }
+
+    .weapon-frac-den {
+      border-top: 1px solid var(--text-secondary);
+      padding-top: 2px;
+      text-align: center;
+    }
+
+    .weapon-frac-note {
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: 9.5px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+      text-align: right;
+      width: 100%;
+    }
+
+    /* 理论亮度关系图 */
+    .theory-diagram {
+      margin-top: 16px;
+      padding: 14px 10px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .td-factors {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .td-factor-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+    }
+
+    .td-factor-box {
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      min-width: 46px;
+      text-align: center;
+    }
+
+    .td-f-aperture {
+      background: rgba(230, 126, 34, 0.12);
+      color: #E67E22;
+    }
+
+    .td-f-shutter {
+      background: rgba(52, 152, 219, 0.12);
+      color: #3498DB;
+    }
+
+    .td-f-iso {
+      background: rgba(26, 188, 156, 0.12);
+      color: #1ABC9C;
+    }
+
+    .td-arrow-label {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    .td-arrow-big {
+      font-size: 18px;
+      color: var(--text-tertiary);
+      font-weight: 700;
+    }
+
+    .td-target-label {
+      font-family: "Noto Sans CJK SC", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .td-target-eq {
+      font-family: "Noto Serif SC", serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .td-neutral-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .td-neutral-label {
+      font-family: "Noto Sans CJK SC", sans-serif;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .td-neutral-note {
+      font-family: "Noto Sans CJK SC", sans-serif;
+      font-size: 10px;
+      color: var(--text-tertiary);
+    }
+
+    /* 曝光标尺可视化 */
+    .exposure-scale {
+      margin-bottom: 14px;
+    }
+
+    .scale-bar {
+      display: flex;
+      height: 24px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .scale-seg {
+      flex: 1;
+    }
+
+    .scale-seg:nth-child(1) {
+      background: #3A404D;
+    }
+
+    .scale-seg:nth-child(2) {
+      background: #535764;
+    }
+
+    .scale-seg:nth-child(3) {
+      background: #72747C;
+    }
+
+    .scale-seg:nth-child(4) {
+      background: #969696;
+    }
+
+    .scale-seg:nth-child(5) {
+      background: #B0ABA3;
+    }
+
+    .scale-seg:nth-child(6) {
+      background: #CBC3B5;
+    }
+
+    .scale-seg:nth-child(7) {
+      background: #E4DBCB;
+    }
+
+    .scale-labels {
+      display: flex;
+      font-size: var(--font-size-base);
+      color: var(--text-tertiary);
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+    }
+
+    .scale-labels span {
+      flex: 1;
+      text-align: center;
+    }
+
+    .scale-labels .zero-label {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .scale-notes {
+      display: flex;
+      margin-top: 6px;
+      gap: 0;
+    }
+
+    .scale-note-neg {
+      flex: 3;
+      text-align: center;
+      font-family: "Noto Serif SC", serif;
+      font-size: 9px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    .scale-note-zero {
+      flex: 2;
+      text-align: center;
+      font-family: "Noto Serif SC", serif;
+      font-size: 9px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    .scale-note-pos {
+      flex: 3;
+      text-align: center;
+      font-family: "Noto Serif SC", serif;
+      font-size: 9px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    .scale-notes strong {
+      color: var(--text);
+      font-family: "Noto Sans CJK SC", sans-serif;
+    }
+
+    .scale-note {
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* 测光方式演示 */
+    .metering-section-title {
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+      margin: 20px 0 0;
+      font-weight: 600;
+    }
+
+    .metering-section-title strong {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .metering-section-sub {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+    }
+
+    .metering-section-note {
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: 9px;
+      color: var(--text-tertiary);
+      margin-top: -2px;
+    }
+
+    .metering-legend {
+      width: 100%;
+      font-size: 10.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+    }
+
+    .legend-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #C3272B;
+      border-radius: 50%;
+      margin-right: 2px;
+    }
+
+    .legend-gray {
+      display: inline-block;
+      width: 48px;
+      height: 6px;
+      background: linear-gradient(to right, rgba(130, 130, 130, .50), rgba(130, 130, 130, .08));
+      border-radius: 3px;
+      margin-right: 2px;
+    }
+
+    .metering-demos {
+      display: flex;
+      gap: 20px;
+    }
+
+    .metering-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .metering-frame {
+      width: 64px;
+      height: 48px;
+      border: 1.5px solid var(--text-tertiary);
+      border-radius: 3px;
+      position: relative;
+      background: var(--card-bg);
+    }
+
+    .metering-zone {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 多重：中心权重高，向四周递减 */
+    .multi-zone {
+      background: radial-gradient(ellipse 55% 70% at 33% 38%, rgba(120, 120, 120, .40) 0%, rgba(120, 120, 120, .15) 60%, transparent 100%);
+    }
+
+    /* 中央重点：中心椭圆 */
+    .center-zone {
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(150, 150, 150, .35) 0%, transparent 100%);
+    }
+
+    /* 点测光：核心圆环 */
+    .spot-zone {}
+
+    .spot-ring {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, rgba(130, 130, 130, .45) 0%, rgba(130, 130, 130, .15) 50%, transparent 100%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .spot-ring.sp-outer {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* 强光重点：全画面检测最高亮度区域 */
+    .highlight-zone {
+      background: transparent;
+    }
+
+    .hl-spot {
+      position: absolute;
+      background: radial-gradient(circle, rgba(130, 130, 130, .45) 0%, rgba(130, 130, 130, .15) 50%, transparent 100%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .metering-label {
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+    }
+
+    .metering-desc {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: 10.5px;
+      color: var(--text-tertiary);
+      line-height: 1.45;
+      word-break: break-all;
+      text-align: center;
+    }
+
+    .metering-dot {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #C3272B;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
     }
 
     /* ========== 表格容器 ========== */
@@ -1014,11 +1534,12 @@
   <div class="container">
     <h1>摄影速查表</h1>
     <div class="subtitle">明暗盈亏 有章可循 慢慢掌握摄影</div>
-    <div class="version">V1.3</div>
+    <div class="version">V1.4.1</div>
     <!-- ========== 导航 ========== -->
     <nav class="toc">
-      <div class="toc-links"> <a href="#portrait">人像</a> <a href="#landscape">风光</a> <a href="#lowlight">弱光夜景</a> <a
-          href="#product">产品静物</a> <a href="#sports">运动舞台</a> <a href="#special">特殊题材</a> <a href="#video">视频</a>
+      <div class="toc-links"> <a href="#objective-weapon">客观武器</a> <a href="#portrait">人像</a> <a
+          href="#landscape">风光</a> <a href="#lowlight">弱光夜景</a> <a href="#product">产品静物</a> <a href="#sports">运动舞台</a>
+        <a href="#special">特殊题材</a> <a href="#video">视频</a>
       </div>
       <div class="legend">
         <div class="legend-group"> <span class="legend-label">曝光</span> <span class="tag ettr">ETTR</span> <span
@@ -1046,6 +1567,142 @@
         </div>
       </div>
     </nav>
+    <!-- ============ 0. 客观武器 ============ -->
+    <div class="section" id="objective-weapon">
+      <div class="section-header">
+        <h2>客观武器</h2><span class="section-badge neutral">工具</span>
+      </div>
+      <div class="weapon-cards">
+        <!-- 卡片：曝光标尺 -->
+        <div class="weapon-card">
+          <div class="weapon-card-header">
+            <h3>曝光标尺</h3>
+            <span class="weapon-card-formula">展示<strong>目标范围</strong>内的加权平均亮度</span>
+            <span class="weapon-card-tag">机内工具</span>
+          </div>
+          <div class="metering-section-title">测光</div>
+          <div class="metering-legend">
+            <span class="legend-dot"></span> 测光点 <span class="legend-gray"></span> 权重 / 深(大) ← → 浅(小)
+          </div>
+          <div class="metering-demos">
+            <div class="metering-item">
+              <div class="metering-frame multi">
+                <div class="metering-zone multi-zone"></div>
+                <div class="metering-dot" style="top:38%;left:33%"></div>
+              </div>
+              <span class="metering-label">多重测光</span>
+              <span class="metering-desc">测光点/场景/人物<br>多重判断选择</span>
+            </div>
+            <div class="metering-item">
+              <div class="metering-frame center">
+                <div class="metering-zone center-zone"></div>
+                <div class="metering-dot" style="top:50%;left:50%"></div>
+              </div>
+              <span class="metering-label">中心（重点）测光</span>
+              <span class="metering-desc">中心权重高<br>向边缘递减</span>
+            </div>
+            <div class="metering-item">
+              <div class="metering-frame spot">
+                <div class="metering-zone spot-zone"></div>
+                <div class="spot-ring" style="top:62%;left:55%"></div>
+                <div class="spot-ring sp-outer" style="top:62%;left:55%"></div>
+                <div class="metering-dot" style="top:62%;left:55%"></div>
+              </div>
+              <span class="metering-label">点测光</span>
+              <span class="metering-desc">只取点邻域范围测光</span>
+            </div>
+            <div class="metering-item">
+              <div class="metering-frame highlight">
+                <div class="metering-zone highlight-zone"></div>
+                <div class="hl-spot" style="top:20%;left:12%;width:10px;height:8px"></div>
+                <div class="hl-spot" style="top:16%;left:52%;width:8px;height:6px"></div>
+                <div class="hl-spot" style="top:32%;left:76%;width:12px;height:9px"></div>
+                <div class="hl-spot" style="top:52%;left:26%;width:9px;height:7px"></div>
+                <div class="hl-spot" style="top:56%;left:60%;width:11px;height:8px"></div>
+                <div class="hl-spot" style="top:70%;left:16%;width:13px;height:10px"></div>
+              </div>
+              <span class="metering-label">强光（重点）测光</span>
+              <span class="metering-desc">优先保护高光<br>防止过曝</span>
+            </div>
+          </div>
+          <div class="metering-section-title">计算<strong>「实际」</strong>亮度</div>
+          <div class="metering-section-sub">由测光范围与权重决定，反映RAW原生场景亮度，与快门/ISO/光圈无关</div>
+          <div class="weapon-formula">
+            <div class="weapon-formula-row">
+              <div class="weapon-formula-label-wrap">
+                <span class="weapon-formula-label">目标范围的综合实际亮度 =</span>
+                <span class="weapon-formula-sub">(加权平均亮度)</span>
+              </div>
+              <div class="weapon-frac">
+                <div class="weapon-frac-num">Σ [ 每像素 (<strong>亮度</strong> × <strong>权重</strong>) ]</div>
+                <div class="weapon-frac-den">Σ [ 每像素 <strong>权重</strong> ]</div>
+              </div>
+            </div>
+            <div class="weapon-frac-note">Σ: 累加、总和</div>
+          </div>
+          <div class="metering-section-title">计算<strong>「理论」</strong>亮度</div>
+          <div class="metering-section-sub">在快门/ISO/光圈的影响下，呈现为不黑不白的「中性灰」的理论亮度</div>
+          <div class="metering-section-note">中性灰即18%灰，对应标尺0刻度。</div>
+          <div class="metering-section-note">大部分场景的平均反射率约为18%，人眼感知的中间灰则更暗。</div>
+          <div class="theory-diagram">
+            <div class="td-factors">
+              <div class="td-factor-row">
+                <span class="td-factor-box td-f-aperture">光圈</span>
+                <span class="td-arrow-label">— 影响 →</span>
+              </div>
+              <div class="td-factor-row">
+                <span class="td-factor-box td-f-shutter">快门</span>
+                <span class="td-arrow-label">— 影响 →</span>
+              </div>
+              <div class="td-factor-row">
+                <span class="td-factor-box td-f-iso">ISO</span>
+                <span class="td-arrow-label">— 影响 →</span>
+              </div>
+            </div>
+            <span class="td-target-label">「理论亮度」</span>
+            →
+            <div class="td-neutral-wrap">
+              <span class="td-neutral-label">中性灰</span>
+              <span class="td-neutral-note">(18%，基准)</span>
+            </div>
+          </div>
+          <div class="metering-section-title">比较「理论」与「实际」的亮度</div>
+          <div class="weapon-formula">
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+              <span
+                style="font-family:'Noto Sans CJK SC',sans-serif;font-size:var(--font-size-base);font-weight:600;color:var(--text)">「实际」的亮度档位</span>
+              <span
+                style="font-family:'Noto Sans CJK SC',sans-serif;font-size:var(--font-size-base);font-weight:600;color:var(--text)">−
+                「理论」的亮度档位</span>
+              <span style="border-top:1.5px solid var(--text-secondary);width:100%;margin-top:2px;"></span>
+              <span
+                style="font-family:'Noto Sans CJK SC',sans-serif;font-size:var(--font-size-base);font-weight:600;color:var(--text)">=
+                EV 偏差</span>
+            </div>
+          </div>
+          <div class="exposure-scale">
+            <div class="scale-bar">
+              <div class="scale-seg"></div>
+              <div class="scale-seg"></div>
+              <div class="scale-seg"></div>
+              <div class="scale-seg"></div>
+              <div class="scale-seg"></div>
+              <div class="scale-seg"></div>
+              <div class="scale-seg"></div>
+            </div>
+            <div class="scale-labels">
+              <span>−3</span><span>−2</span><span>−1</span><span
+                class="zero-label">0</span><span>+1</span><span>+2</span><span>+3</span>
+            </div>
+            <div class="scale-notes">
+              <div class="scale-note-neg"><strong>负值</strong><br>「实际」&lt;「理论」<br>场景暗于中性灰<br>曝光不足</div>
+              <div class="scale-note-zero"><strong>零</strong><br>「实际」=「理论」<br>场景即为中性灰<br>曝光准确</div>
+              <div class="scale-note-pos"><strong>正值</strong><br>「实际」&gt;「理论」<br>场景亮于中性灰<br>曝光过度</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ============ 1. 人像 ============ -->
     <div class="section" id="portrait">
       <div class="section-header">
@@ -1077,7 +1734,8 @@
             </tr>
             <tr>
               <td class="col-scene">逆光人像<br><span class="scene-sub">补光优先</span><br><span class="bkt aeb-rec">曝光包围</span>
-                <span class="param">±1EVx3</span></td>
+                <span class="param">±1EVx3</span>
+              </td>
               <td class="col-ev"><span class="ev-plus">+0.3~+0.7</span> <span class="tag ettr">ETTR</span><br><span
                   class="meter spot">点测光</span><br><span class="note-inline">人脸优先</span></td>
               <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1/250 -
@@ -1089,7 +1747,8 @@
             </tr>
             <tr>
               <td class="col-scene">剪影<br><span class="scene-sub">完全逆光</span><br><span class="bkt aeb-rec">曝光包围</span>
-                <span class="param">±1EVx3</span></td>
+                <span class="param">±1EVx3</span>
+              </td>
               <td class="col-ev"><span class="ev-minus">-1.3~-2.3</span> <span class="tag ettl">ETTL</span><br><span
                   class="meter spot">点测光</span><br><span class="note-inline">天空优先</span></td>
               <td class="col-exposure"><span class="val">100 - 400</span><br><span class="val">1/250 -
