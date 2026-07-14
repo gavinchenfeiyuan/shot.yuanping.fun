@@ -735,6 +735,114 @@
       margin-bottom: 8px;
     }
 
+    .ec-scenes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .ec-scene {
+      font-family: "Noto Serif SC", "Noto Serif CJK", serif;
+      font-size: 9.5px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+      border-radius: 6px;
+      padding: 8px 10px;
+      border: 1px solid var(--border-light);
+    }
+
+    .ec-scene strong {
+      color: var(--text);
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+    }
+
+    .ec-plus {
+      border-top: 2px solid #c0392b;
+    }
+
+    .ec-minus {
+      border-top: 2px solid #2e7d32;
+    }
+
+    .mode-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0 0;
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+    }
+    .mode-table th,
+    .mode-table td {
+      padding: 5px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .mode-table th {
+      font-weight: 600;
+      font-size: .8em;
+      color: var(--text-tertiary);
+    }
+    .mode-table td:first-child {
+      font-weight: 600;
+    }
+    .mode-table td:nth-child(2) {
+      font-size: .85em;
+      text-align: center;
+    }
+    .mode-table td:last-child {
+      font-size: .85em;
+      color: var(--text-tertiary);
+    }
+    .modes-icon-yes {
+      color: #2e7d32;
+    }
+    .modes-icon-no {
+      color: #c62828;
+    }
+
+    .loop-diagram {
+      width: 100%;
+      max-width: 380px;
+      margin: 10px auto 0;
+      display: block;
+    }
+
+    .loop-note {
+      margin-top: 10px;
+      font-size: 11px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .loop-note-title {
+      font-weight: 600;
+      color: var(--ettr-tag);
+    }
+
+    .ec-svg {
+      width: 100%;
+      height: auto;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .ec-cap {
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: 8px;
+      fill: var(--text-tertiary);
+    }
+
+    .ec-arrow {
+      font-family: "Noto Sans CJK SC", sans-serif;
+      font-size: 15px;
+      fill: var(--text-secondary);
+    }
+
     .metering-section-note {
       font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
       font-size: 9px;
@@ -1485,7 +1593,7 @@
   <div class="container">
     <h1>摄影速查表</h1>
     <div class="subtitle">明暗盈亏 有章可循 慢慢掌握摄影</div>
-    <div class="version">V1.4.5</div>
+    <div class="version">V1.4.6</div>
     <!-- ========== 导航 ========== -->
     <nav class="toc">
       <div class="toc-links"> <a href="#objective-weapon">客观武器</a> <a href="#portrait">人像</a> <a
@@ -1579,7 +1687,7 @@
             </div>
           </div>
           <div class="metering-section-title">计算<strong>「实际」</strong>亮度</div>
-          <div class="metering-section-sub">由测光范围与权重决定，反映RAW原生场景亮度，与快门/ISO/光圈无关</div>
+          <div class="metering-section-sub">由测光范围与权重决定，反映场景反射亮度（测光所得），与快门/ISO/光圈无关</div>
           <div class="weapon-formula">
             <div class="weapon-formula-row">
               <div class="weapon-formula-label-wrap">
@@ -1659,6 +1767,57 @@
               <div class="scale-note-pos"><strong>正值</strong><br>「实际」&gt;「理论」<br>场景亮于中性灰<br>曝光过度</div>
             </div>
           </div>
+          <div class="metering-section-sub">场景稳定时，标尺主要随快门/ISO/光圈移动，反映这些参数对<strong>成片亮度</strong>的影响</div>
+          <div class="metering-section-title">曝光补偿</div>
+          <div class="metering-section-sub">让整张画面该亮的时候真亮，该暗的时候真暗</div>
+          <div class="metering-section-sub">「假灰」是因为相机总把测光结果往中性灰上靠<br> ——中性灰只是相机的参考尺度，而「真黑真白」才是人眼需要的真美</div>
+          <div class="metering-section-sub">另外，保留亮暗部细节是HDR该做的事情</div>
+          <div class="ec-scenes">
+            <div class="ec-scene ec-plus">
+              <strong>加 EV（+）</strong><br>大面积亮：雪地、白墙、逆光天空、白婚纱——否则被压成死灰（欠曝）
+              <svg class="ec-svg" viewBox="0 0 260 82" role="img" aria-label="加EV前后对比">
+                <text class="ec-cap" x="43" y="14" text-anchor="middle">不补</text>
+                <rect x="13" y="20" width="60" height="40" rx="6" fill="#cccccc"/>
+                <text class="ec-cap" x="43" y="78" text-anchor="middle">偏灰·欠曝</text>
+                <text class="ec-arrow" x="142" y="45" text-anchor="middle">→</text>
+                <text class="ec-cap" x="217" y="14" text-anchor="middle">补后</text>
+                <rect x="187" y="20" width="60" height="40" rx="6" fill="#f4f4f4" stroke="#cccccc"/>
+                <text class="ec-cap" x="217" y="78" text-anchor="middle">正确·雪白</text>
+              </svg>
+            </div>
+            <div class="ec-scene ec-minus">
+              <strong>减 EV（−）</strong><br>大面积暗：黑猫、夜景灯光、黑背景、深色调——否则被提亮成灰（过曝）
+              <svg class="ec-svg" viewBox="0 0 260 82" role="img" aria-label="减EV前后对比">
+                <text class="ec-cap" x="43" y="14" text-anchor="middle">不补</text>
+                <rect x="13" y="20" width="60" height="40" rx="6" fill="#cccccc"/>
+                <text class="ec-cap" x="43" y="78" text-anchor="middle">偏灰·过曝</text>
+                <text class="ec-arrow" x="142" y="45" text-anchor="middle">→</text>
+                <text class="ec-cap" x="217" y="14" text-anchor="middle">补后</text>
+                <rect x="187" y="20" width="60" height="40" rx="6" fill="#2c2c2c"/>
+                <text class="ec-cap" x="217" y="78" text-anchor="middle">正确·纯黑</text>
+              </svg>
+            </div>
+          </div>
+          <div class="metering-section-sub">相机默认一切都是 18% 灰，遇到整片亮或整片暗会判错，需要补偿：</div>
+          <div class="metering-section-sub">标尺 0 点即 18% 中性灰；相机总想把测光结果拉到 0，于是整片亮被压暗、整片暗被提亮<br> ——补偿就是主动挪动这个 0 点</div>
+          <table class="mode-table">
+            <thead>
+              <tr><th>模式</th><th>锁定</th><th>补偿</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A 档（光圈优先）</td><td>光圈</td><td>快门</td></tr>
+              <tr><td>S 档（快门优先）</td><td>快门</td><td>光圈</td></tr>
+              <tr><td>P 档（程序自动）</td><td>无</td><td>光圈 + 快门</td></tr>
+              <tr><td>M 档（全手动）</td><td>光圈 + 快门</td><td>无（标尺仅提示）</td></tr>
+              <tr><td>AE 锁定（半按快门）</td><td>当前测光值</td><td>冻结参数，不自动追</td></tr>
+            </tbody>
+          </table>
+          <div class="metering-section-title">闭环</div>
+          <div class="metering-section-sub">待</div>
+          <svg class="loop-diagram" viewBox="0 0 380 20" role="img" aria-label="曝光标尺闭环流程">
+          </svg>
+          <div class="metering-section-title">视觉</div>
+          <div class="metering-section-sub">人眼结合场景判断偏差是否「假灰」—— 相机被大面积亮/暗误导，再决定曝光补偿或调整要素来纠偏</div>
         </div>
       </div>
     </div>
